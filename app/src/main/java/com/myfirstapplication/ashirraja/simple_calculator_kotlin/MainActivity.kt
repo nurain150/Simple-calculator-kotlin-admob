@@ -7,11 +7,10 @@ import android.widget.Button
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
 import net.objecthunter.exp4j.ExpressionBuilder
-
+import com.google.android.gms.ads.MobileAds
 class MainActivity : AppCompatActivity() {
-
-
-   lateinit var outputTextView: TextView
+    lateinit var mAdView : AdView
+    lateinit var outputTextView : TextView
     var lastNumaric: Boolean= false
     var stateError: Boolean = false
     var lastDot :Boolean=false
@@ -23,6 +22,9 @@ class MainActivity : AppCompatActivity() {
         outputTextView=findViewById(R.id.txtInput)
    /*This is the modification part as the sdk needs to intialized*/
         MobileAds.initialize(this) {}
+        mAdView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
     }
     }
 
