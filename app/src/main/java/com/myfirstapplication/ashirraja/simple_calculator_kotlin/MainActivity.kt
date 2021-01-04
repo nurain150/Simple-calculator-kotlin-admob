@@ -21,6 +21,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         outputTextView=findViewById(R.id.txtInput)
+   /*This is the modification part as the sdk needs to intialized*/
+        MobileAds.initialize(this) {}
+    }
     }
 
     fun onDigit(view: View)
